@@ -1,7 +1,5 @@
 public class GasPumpDisplay{
     public GasPumpDisplay (int numberOfPosition){
-//        if (numberOfPosition > 1)
-//            tail = new GasPumpDisplay(numberOfPosition-1);
         digits = numberOfPosition;
         max = 0;
         currentDigit = 0;
@@ -14,17 +12,14 @@ public class GasPumpDisplay{
         boolean status = false;
         int x = currentDigit;
         String number = Integer.toString(currentDigit);
-        while(x != 0)
-        {
+        while(x != 0) {
             if (x % 10 > MAX_DIGIT) {
                 status = true;
-//                tail.nextElement();
                 break;
             }
             x /= 10;
         }
-        if(!status)
-        {
+        if(!status) {
             double i = 1;
             StringBuilder numberBuilder = new StringBuilder(number);
             while (i < digits){
