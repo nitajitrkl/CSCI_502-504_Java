@@ -1,10 +1,10 @@
 import java.util.Scanner;
-public class Fibonacci1Tester {
+public class Fibonacci_NthNumberTester {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num = in.nextInt();
-        Fibonacci1 sample = new Fibonacci1();
+        Fibonacci_NthNumber sample = new Fibonacci_NthNumber();
         int next = 0;
         if (num > 0 && num<=2){
             next = 1;

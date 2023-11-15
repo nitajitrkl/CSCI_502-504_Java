@@ -1,5 +1,5 @@
-public class Fibonacci1 {
-    public Fibonacci1 (){
+public class Fibonacci_NthNumber {
+    public Fibonacci_NthNumber (){
         fold1 = 1;
         fold2 = 1;
         fnew = 1;

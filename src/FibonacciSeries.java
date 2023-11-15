@@ -1,5 +1,5 @@
-public class Fibonacci {
-    public Fibonacci (int n){
+public class FibonacciSeries {
+    public FibonacciSeries (int n){
         num = n;
         end = 1;
         start = 0;

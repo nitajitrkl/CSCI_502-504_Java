@@ -7,6 +7,5 @@ public class Converter1 {
     {
         return factor * fromMeasurement;
     }
-    final double MILE_TO_KM = 1.609;
     private final double factor;
 }

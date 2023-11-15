@@ -1,9 +1,8 @@
 import java.util.Scanner;
-
-public class FibonacciTester {
+public class FibonacciSeriesTester {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Fibonacci sample = new Fibonacci(in.nextInt());
+        FibonacciSeries sample = new FibonacciSeries(in.nextInt());
         sample.printFibonacci();
     }
 }

@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Factorial_HWTester {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -11,6 +10,5 @@ public class Factorial_HWTester {
             Factorial_HW sample = new Factorial_HW(number);
             System.out.println("Factorial is: " + sample.getFactorial());
         }
-
     }
 }
