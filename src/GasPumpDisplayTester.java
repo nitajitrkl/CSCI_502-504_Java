@@ -8,7 +8,7 @@ public class GasPumpDisplayTester{
             if(!word.isEmpty()){
                 System.out.print(word + " ");
                 count++;
-                if((count % 25) == 0)
+                if((count % 20) == 0)
                     System.out.println();
             }
         }
