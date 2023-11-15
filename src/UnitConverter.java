@@ -4,13 +4,10 @@ public class UnitConverter {
         destination = iDestination;
         amount = iAmount;
     }
-    public double convertTo ()
-    {
+    public double convertTo () {
         switch (origin){
-            case "in":
-            {
-                switch (destination)
-                {
+            case "in": {
+                switch (destination) {
                     case "in": return amount;
                     case "ft": return amount * IN_FT;
                     case "mi": return amount * IN_MI;
@@ -21,10 +18,8 @@ public class UnitConverter {
                 }
                 break;
             }
-            case "ft":
-            {
-                switch (destination)
-                {
+            case "ft": {
+                switch (destination) {
                     case "in": return amount * (1/IN_FT);
                     case "ft": return amount;
                     case "mi": return amount * FT_MI;
@@ -35,10 +30,8 @@ public class UnitConverter {
                 }
                 break;
             }
-            case "mi":
-            {
-                switch (destination)
-                {
+            case "mi": {
+                switch (destination) {
                     case "in": return amount * (1/IN_MI);
                     case "ft": return amount * (1/FT_MI);
                     case "mi": return amount;
@@ -49,10 +42,8 @@ public class UnitConverter {
                 }
                 break;
             }
-            case "mm":
-            {
-                switch (destination)
-                {
+            case "mm": {
+                switch (destination) {
                     case "in": return amount * (1/IN_MM);
                     case "ft": return amount * (1/FT_MM);
                     case "mi": return amount * (1/ MI_MM);
@@ -63,10 +54,8 @@ public class UnitConverter {
                 }
                 break;
             }
-            case "cm":
-            {
-                switch (destination)
-                {
+            case "cm": {
+                switch (destination) {
                     case "in": return amount * (1/IN_CM);
                     case "ft": return amount * (1/FT_CM);
                     case "mi": return amount * (1/MI_CM);
@@ -77,10 +66,8 @@ public class UnitConverter {
                 }
                 break;
             }
-            case "km":
-            {
-                switch (destination)
-                {
+            case "km": {
+                switch (destination) {
                     case "in": return amount * (1/IN_KM);
                     case "ft": return amount * (1/FT_KM);
                     case "mi": return amount * (1/MI_KM);
