@@ -11,12 +11,15 @@ public class DataSet {
     public double getMax(){
         return max;
     }
-    public void add(double x)
-    {
+    public void add(double x) {
         if (n==0 || max < x)
             max = x;
         sum = sum + x;
         n++;
+    }
+    public double getSum()
+    {
+        return sum;
     }
     private double sum;
     private double max;

@@ -1,12 +1,18 @@
-import java.util.Random;
+import java.util.Scanner;
 public class DataSetTester {
     public static void main(String[] args) {
-        DataSet sample = new DataSet();
-        Random g = new Random();
-        for (int i = 0; i< 100; i++){
-            sample.add(Math.random ()*1000);
-        }
-        System.out.println("The average is: " + sample.getAverage());
-        System.out.println("The maximum value is: " + sample.getMax());
+        Scanner in = new Scanner(System.in);
+        DataSet data = new DataSet();
+        System.out.println("Enter 4 numbers: ");
+        int num1 = in.nextInt();
+        data.add(num1);
+        int num2 = in.nextInt();
+        data.add(num2);
+        int num3 = in.nextInt();
+        data.add(num3);
+        int num4 = in.nextInt();
+        data.add(num4);
+        System.out.println("Sum: " + data.getSum());
+        System.out.println("Average: " + data.getAverage());
     }
 }
