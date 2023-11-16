@@ -7,6 +7,6 @@ public class FibonacciRecurse {
             start = end;
             end = next;
             printFibonacci(start, end, n - 1);
-        } else System.out.println("Error");
+        }
     }
 }
