@@ -1,14 +1,12 @@
 import java.util.Random;
 
 public class Needle {
-    public Needle()
-    {
+    public Needle() {
         myHits = 0;
         myTries = 0;
         myGenerator = new Random();
     }
-    public void drop()
-    {
+    public void drop() {
         double ylow = 2 * myGenerator.nextDouble();
         double angle = 180 * myGenerator.nextDouble();
 
@@ -24,7 +22,6 @@ public class Needle {
     {
         return myTries;
     }
-
     private final Random myGenerator;
     private int myHits;
     private int myTries;
