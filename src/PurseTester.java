@@ -26,8 +26,8 @@ public class PurseTester {
 
         Purse d = new Purse();
         d.add("Nickel");
+        d.add("Nickel");
         d.add("Dime");
-        d.add("Quarter");
 
         System.out.println(c.sameContents(d));
 
