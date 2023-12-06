@@ -17,6 +17,9 @@ public class CashRegister {
         payment = 0;
         return change;
     }
+    public void enterPayment(int coinCount, Coin coinType){
+        payment = payment + coinCount * coinType.getValue();
+    }
     private double purchase;
     private double payment;
     public static final double QUARTER_VALUE = 0.25;
