@@ -1,20 +1,21 @@
 public class BankTester {
     public static void main(String[] args) {
         Bank sample = new Bank();
-        sample.addAccount(new BankAccountArrayList(1001, 20000));
-        sample.addAccount(new BankAccountArrayList(1015, 10000));
-        sample.addAccount(new BankAccountArrayList(1729, 15000));
-        double threshold = 30000;
-        int c = sample.count(threshold);
-        System.out.println(c + " accounts with Balance >= " + threshold);
-        int accountNumber = 1015;
-        BankAccountArrayList a = sample.find(accountNumber);
-        if (a==null){
-            System.out.println("No account with this account number..." + accountNumber);
-        } else {
-            System.out.println("Account with Number " + accountNumber + " has balance: " + a.getBalance());
-        }
-        BankAccountArrayList max = sample.getMaximum();
-        System.out.println("\nAccount with number " + max.getAccountNumber() + " has the largest balance ($" + max.getBalance() + ")" );
+        int dannysAccount = 0;
+        int sallysAccount = 1;
+        int harrysAccount = 2;
+        int jerrysAccount = 3;
+
+        sample.addAccount(new BankAccount(dannysAccount, 1000));
+        sample.addAccount(new BankAccount(sallysAccount, 2000));
+        sample.addAccount(new BankAccount(harrysAccount, 3000));
+        sample.addAccount(new BankAccount(jerrysAccount, 10000));
+
+        sample.deposit(dannysAccount, 200);
+        sample.withdraw(sallysAccount, 500);
+        sample.deposit(harrysAccount, 1000);
+        sample.withdraw(jerrysAccount, 7000);
+        System.out.println(sample.find(dannysAccount).getBalance());
+
     }
 }

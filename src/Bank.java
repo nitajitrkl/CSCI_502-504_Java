@@ -3,16 +3,16 @@ public class Bank
 {
     public Bank()
     {
-        accounts = new ArrayList<BankAccountArrayList>() ;
+        accounts = new ArrayList<BankAccount>() ;
     }
-    public void addAccount(BankAccountArrayList a)
+    public void addAccount(BankAccount a)
     {
         accounts.add(a) ;
     }
     public double getTotalBalance()
     {
         double total = 0;
-        for (BankAccountArrayList current : accounts) {
+        for (BankAccount current : accounts) {
             total = total + current.getBalance();
         }
         return total ;
@@ -20,32 +20,44 @@ public class Bank
     public int count(double atLeast)
     {
         int matches = 0 ;
-        for (BankAccountArrayList current : accounts) {
+        for (BankAccount current : accounts) {
             if (current.getBalance() >= atLeast)
                 matches++;
         }
         return matches ;
     }
-    public BankAccountArrayList find(int accountNumber)
+    public BankAccount find(int accountNumber)
     {
-        for (BankAccountArrayList a : accounts) {
+        for (BankAccount a : accounts) {
             if (a.getAccountNumber() == accountNumber)
                 return a;
         }
         return null ;
     }
-    public BankAccountArrayList getMaximum()
+    public BankAccount getMaximum()
     {
         if (accounts.isEmpty())
             return null;
-        BankAccountArrayList largestYet = accounts.get(0) ;
+        BankAccount largestYet = accounts.get(0) ;
         for ( int i = 1; i < accounts.size(); i++ )
         {
-            BankAccountArrayList current = accounts.get(i) ;
+            BankAccount current = accounts.get(i) ;
             if (current.getBalance() > largestYet.getBalance())
                 largestYet = current ;
         }
         return largestYet ;
     }
-    private final ArrayList<BankAccountArrayList> accounts ;
+    public void addCount(int accountNumber, double initialBalance){
+        accounts.add(new BankAccount(accountNumber, initialBalance));
+    }
+    public void deposit(int accountNumber, double amount){
+        find(accountNumber).deposit(amount);
+    }
+    public void withdraw(int accountNumber, double amount){
+        find(accountNumber).withdraw(amount);
+    }
+    public double getBalance(int accountNumber){
+        return find(accountNumber).getBalance();
+    }
+    private final ArrayList<BankAccount> accounts ;
 }
