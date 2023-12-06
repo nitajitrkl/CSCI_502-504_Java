@@ -1,3 +1,4 @@
+import money.Coin;
 public class CashRegister {
     public CashRegister () {
         purchase = 0;

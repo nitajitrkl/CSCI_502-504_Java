@@ -1,3 +1,5 @@
+package money;
+
 public class Coin {
     public Coin (double aValue, String aName){
         value = aValue;
