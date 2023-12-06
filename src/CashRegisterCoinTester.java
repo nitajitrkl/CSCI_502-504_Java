@@ -33,9 +33,10 @@ public class CashRegisterCoinTester {
                 if (value != 0) {
                     System.out.println("Enter the number of coins");
                     int n = in.nextInt();
-                    Coin c = new Coin(value, input);
+//                    Coin c = new Coin(value, input);
+                    Locker c = new Locker(value,input);
                     sample.enterPayment(n, c);
-                    System.out.println("Your change is " + sample.giveChange());
+                    System.out.println("Your change is " + sample.giveChange(c));
                 }
             }
         }

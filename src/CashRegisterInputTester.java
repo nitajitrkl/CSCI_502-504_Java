@@ -17,6 +17,6 @@ public class CashRegisterInputTester {
         System.out.print("Enter Pennies: ");
         double paymentPennies = in.nextDouble();
         customer.receivePayment(paymentDollars, paymentQuarters, paymentDimes, paymentNickels, paymentPennies);
-        System.out.println("Your Change: " + customer.giveChange());
+//        System.out.println("Your Change: " + customer.giveChange());
     }
 }
