@@ -1,6 +1,6 @@
-public class Bank2Tester {
+public class BankTester {
     public static void main(String[] args) {
-        Bank2 sample = new Bank2();
+        Bank sample = new Bank();
         sample.addAccount(new BankAccountArrayList(1001, 20000));
         sample.addAccount(new BankAccountArrayList(1015, 10000));
         sample.addAccount(new BankAccountArrayList(1729, 15000));
