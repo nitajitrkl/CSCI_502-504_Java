@@ -3,6 +3,6 @@ public class BankAccountTester{
         BankAccount checking = new BankAccount(1231313, 123);
         checking.deposit(2000);
         checking.withdraw(500);
-        System.out.println("Balance: $" + checking.getBalance());
+        System.out.println("Bank Account Number: "+ checking.getAccountNumber() + " Balance: $" + checking.getBalance());
     }
 }
