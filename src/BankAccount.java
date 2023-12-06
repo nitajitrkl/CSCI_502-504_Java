@@ -1,8 +1,8 @@
 public class BankAccount {
-    public BankAccount (int anAccountNumber) {
-        accountNumber = anAccountNumber;
-        balance = 0;
-    }
+//    public BankAccount (int anAccountNumber) {
+//        accountNumber = anAccountNumber;
+//        balance = 0;
+//    }
     public BankAccount (int anAccountNumber, double initialBalance) {
         accountNumber = anAccountNumber;
         balance = initialBalance;
