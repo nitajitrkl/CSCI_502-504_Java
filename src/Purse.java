@@ -32,6 +32,17 @@ public class Purse {
             j--;
         }
     }
+    public boolean sameContents(Purse other){
+        Purse otherPurse = (Purse) other;
+        if (coins.size() == otherPurse.coins.size()) {
+            for (int i = 0; i < coins.size(); i++)
+                if (!coins.get(i).equals(otherPurse.coins.get(i)))
+                    return false;
+        }
+        else
+            return false;
+        return true;
+    }
 
     private final ArrayList<String> coins;
 }
