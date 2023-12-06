@@ -10,7 +10,7 @@ public class Purse {
         coins.add(coinName);
     }
 
-    public String toString() {
+    public String toStrng() {
         if (coins.isEmpty())
             return "Purse[]";
         String output = "Purse[";

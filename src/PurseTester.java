@@ -5,8 +5,8 @@ public class PurseTester {
         sample.add("Dime");
         sample.add("Nickel");
         sample.add("Dime");
-        System.out.println("Original purse: " + sample.toString());
+        System.out.println("Original purse: " + sample.toStrng());
         sample.reverse();
-        System.out.println("Reversed purse: " + sample.toString());
+        System.out.println("Reversed purse: " + sample.toStrng());
     }
 }
