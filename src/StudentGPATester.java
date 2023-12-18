@@ -1,7 +1,6 @@
 public class StudentGPATester {
     public static void main(String[] args) {
-        StudentGPA sample = new StudentGPA();
-        StudentGPA student1 = new StudentGPA();
+        StudentGPA student1 = new StudentGPA("faf", "afafa", "332", 4.44);
         StudentGPA student2 = new StudentGPA("Joe", "Smith", "111", 3.86);
         StudentGPA student3 = new StudentGPA("harry", "hakd", "2323", 3.52);
         StudentGPA.change1(student1, student2);
