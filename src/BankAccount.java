@@ -22,4 +22,13 @@ public class BankAccount {
     }
     private double balance;
     private int accountNumber;
+
+    public void falseSwap(BankAccount a, BankAccount b)
+    {
+        BankAccount temp = a;
+        a = b;
+        b = temp;
+    }
 }
+
+
