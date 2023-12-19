@@ -23,7 +23,7 @@ public class StudentGPA {
     }
 
     public static void change2(StudentGPA stdt1, StudentGPA stdt2) {
-        stdt1.setGPA(stdt2.getGPA());
+        setGPA(stdt2.getGPA()); // Static methods
     }
     private String firstName;
     private String lastName;
