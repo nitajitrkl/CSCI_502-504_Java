@@ -1,24 +1,19 @@
 import java.util.ArrayList ;
-public class Bank
-{
-    public Bank()
-    {
+public class Bank {
+    public Bank() {
         accounts = new ArrayList<BankAccount>() ;
     }
-    public void addAccount(BankAccount a)
-    {
+    public void addAccount(BankAccount a) {
         accounts.add(a) ;
     }
-    public double getTotalBalance()
-    {
+    public double getTotalBalance() {
         double total = 0;
         for (BankAccount current : accounts) {
             total = total + current.getBalance();
         }
         return total ;
     }
-    public int count(double atLeast)
-    {
+    public int count(double atLeast) {
         int matches = 0 ;
         for (BankAccount current : accounts) {
             if (current.getBalance() >= atLeast)
@@ -26,21 +21,18 @@ public class Bank
         }
         return matches ;
     }
-    public BankAccount find(int accountNumber)
-    {
+    public BankAccount find(int accountNumber) {
         for (BankAccount a : accounts) {
             if (a.getAccountNumber() == accountNumber)
                 return a;
         }
         return null ;
     }
-    public BankAccount getMaximum()
-    {
+    public BankAccount getMaximum() {
         if (accounts.isEmpty())
             return null;
         BankAccount largestYet = accounts.get(0) ;
-        for ( int i = 1; i < accounts.size(); i++ )
-        {
+        for ( int i = 1; i < accounts.size(); i++ ) {
             BankAccount current = accounts.get(i) ;
             if (current.getBalance() > largestYet.getBalance())
                 largestYet = current ;
