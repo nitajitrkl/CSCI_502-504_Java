@@ -1,17 +1,14 @@
 public class Rectangle {
-    private double width;
-    private double height;
-
-    public Rectangle(double width, double height) {
-        this.width = width;
-        this.height = height;
+    public Rectangle(double aLength, double aBreadth) {
+        this.length = aLength;
+        this.breadth = aBreadth;
     }
-
-    public double getArea() {
-        return width * height;
+    public double calculateArea () {
+        return length * breadth;
     }
-
-    public double getPerimeter() {
-        return 2 * (width + height);
+    public double calculatePerimeter() {
+        return 2 * (length + breadth);
     }
+    private final double length;
+    private final double breadth;
 }
