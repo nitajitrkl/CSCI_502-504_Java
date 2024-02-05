@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class concatAndUpperTester {
+public class ConcatAndUpperTester {
     public static void main(String[] args) {
-        concatAndUpper sample = new concatAndUpper();
+        ConcatAndUpper sample = new ConcatAndUpper();
         Scanner in = new Scanner(System.in);
         System.out.println("Enter two strings");
         String a = in.next();
