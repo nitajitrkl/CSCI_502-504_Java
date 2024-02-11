@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 abstract class Widget {
     Widget (int height, int width){
         this.height = height;
@@ -28,7 +29,6 @@ class TextField extends  Widget {
     }
     private final String text;
 }
-
 class Dropdown extends Widget {
     Dropdown(int height, int width, String[] names) {
         super(height, width);
@@ -37,16 +37,12 @@ class Dropdown extends Widget {
     public void render(){
         System.out.println("Below DropDown Rendering!!!");
         for (String name : names){
-            System.out.println(name + " Rendering NOW!!!");
+            System.out.println("   " + name + " Rendering NOW!!!");
         }
     }
     private final String[] names;
 }
-
 class Form {
-    public Form (){
-        ArrayList<Widget> widgets = new ArrayList<>();
-    }
     public void addWidget(Widget w) {
         widgets.add(w);
     }
@@ -55,5 +51,5 @@ class Form {
             w.render();
         }
     }
-    private ArrayList<Widget> widgets;
+    private ArrayList<Widget> widgets = new ArrayList<>();
 }
