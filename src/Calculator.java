@@ -3,7 +3,7 @@ public class Calculator {
         this.num1 = num1;
         this.num2 = num2;
     }
-    public double add(){
+    public double add1(){
         return num1+num2;
     }
     public double subtract(){
