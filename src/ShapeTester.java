@@ -1,34 +1,40 @@
-class Shape{
-    double calculateArea (){
-        return 0;
+import java.util.ArrayList;
+
+abstract class Shape{
+    public void draw(){
+        System.out.println("Shape has been drawn!!!");
     }
 }
 
 class Circle extends Shape {
-    private final double radius;
-    public Circle(double radius) {
-        this.radius = radius;
-    }
-    public double calculateArea() {
-        return Math.PI * radius * radius;
+    public void draw(){
+        System.out.println("Circle has been drawn!!!");
     }
 }
 
-class Square extends Shape {
-    private final double side;
-    public Square(double side) {
-        this.side = side;
+class Rectangle1 extends Shape {
+    public void draw(){
+        System.out.println("Rectangle has been drawn!!!");
     }
-    public double calculateArea() {
-        return side * side;
+}
+
+class Triangle extends Shape {
+    public void draw(){
+        System.out.println("Triangle has been drawn!!!");
     }
 }
 
 public class ShapeTester {
     public static void main(String[] args) {
-        Circle c = new Circle(1);
-        Square s = new Square(1);
-        System.out.println(c.calculateArea());
-        System.out.println(s.calculateArea());
+        Shape c = new Circle();
+        Shape r = new Rectangle1();
+        Shape t = new Triangle();
+        ArrayList<Shape> shapes = new ArrayList<>();
+        shapes.add(c);
+        shapes.add(r);
+        shapes.add(t);
+        for (Shape shape : shapes){
+            shape.draw();
+        }
     }
 }

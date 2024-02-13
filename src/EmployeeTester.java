@@ -1,7 +1,13 @@
+import java.util.ArrayList;
+
 public class EmployeeTester {
     public static void main(String[] args) {
-        Employee sample = new Employee("Ajit", 4000, 5);
-        System.out.println(sample.getName()+" is working for " + sample.getYearOfJoining() + " in" + " monthly salary of " + sample.getMonthlySalary());
-        System.out.println("Annual Salary: " + sample.calculateAnnualSalary());
+        ArrayList<Employee> employess = new ArrayList<>();
+        employess.add(new Manager1("Ajit", 3000, "Recusrion"));
+        employess.add(new Developer("Amit", 4000, "Python"));
+        for (Employee employee : employess) {
+            employee.displayDetails();
+            System.out.println(employee.getName());
+        }
     }
 }
