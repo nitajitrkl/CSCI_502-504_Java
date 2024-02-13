@@ -47,8 +47,8 @@ class Form {
         widgets.add(w);
     }
     public void renderForm() {
-        for (Widget w : widgets) {
-            w.render();
+        for (Widget s : widgets) {
+            s.render();
         }
     }
     private ArrayList<Widget> widgets = new ArrayList<>();
