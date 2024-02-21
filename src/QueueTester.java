@@ -1,24 +1,18 @@
 public class QueueTester {
     public static void main(String[] args) {
-        Queue queue = new Queue();
-
-        // Adding people to the queue
-        queue.enqueue("Alice");
-        queue.enqueue("Bob");
-        queue.enqueue("Charlie");
-
-        // Displaying the current state of the queue
-        queue.display();
-
-        // Removing a person from the front of the queue
-        String removedPerson = queue.dequeue();
+        Queue sample = new Queue();
+        sample.enqueue("Ajit");
+        sample.enqueue("Amit");
+        sample.enqueue("Anil");
+        sample.display();
+        String removedPerson = sample.dequeue();
         if (removedPerson != null) {
-            System.out.println("Removed from the front of the queue: " + removedPerson);
+            System.out.println("Removed from line: " + removedPerson);
         } else {
-            System.out.println("The queue is empty.");
+            System.out.println("The line is empty");
         }
-
-        // Displaying the current state of the queue after removal
-        queue.display();
+        sample.enqueue("Ajay");
+        System.out.println("Ajay has joined the line...");
+        sample.display();
     }
 }

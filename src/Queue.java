@@ -1,30 +1,21 @@
 import java.util.LinkedList;
-
 class Queue {
-    private final LinkedList<String> queue;
-
+    private final LinkedList<String> line;
     public Queue() {
-        queue = new LinkedList<>();
+        line = new LinkedList<String>();
     }
-
     public void enqueue(String person) {
-        queue.addLast(person);
+        line.addLast(person);
     }
-
     public String dequeue() {
-        if (isEmpty()) {
+        if (line.isEmpty()) {
             return null;
         }
-        return queue.removeFirst();
+        return line.removeFirst();
     }
-
-    public boolean isEmpty() {
-        return queue.isEmpty();
-    }
-
     public void display() {
-        System.out.println("Current state of the queue:");
-        for (String person : queue) {
+        System.out.println("Line progress NOW: ");
+        for (String person : line) {
             System.out.println(person);
         }
     }
