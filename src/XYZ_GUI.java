@@ -3,52 +3,51 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class XYZ_GUI extends JFrame {
-
     public XYZ_GUI() {
+        JFrame frame = new JFrame("XYZ User Registration");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+        frame.add(new TestPane());
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+    public static void main(String[] args) {
+        new XYZ_GUI();
+    }
+}
 
-        this.setLayout(new BorderLayout());
-        this.setTitle("XYZ User Registration");
-        this.setSize(500, 400);
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+class TestPane extends JPanel {
+    public TestPane() {
+        setLayout(new GridLayout(1,0));
+        add(createPane());
+    }
+    public JPanel createPane() {
 
-        JPanel panel1 = new JPanel();
-        panel1.setBackground(Color.RED);
-        panel1.setLayout(new GridLayout(5   , 2, 5, 5));
-
-        JPanel panel2 = new JPanel();
-        panel2.setBackground(Color.GREEN);
-        panel2.setLayout(new FlowLayout());
-
-//        JPanel panel3 = new JPanel();
-//        panel2.setBackground(Color.BLUE);
-//        panel2.setLayout(new FlowLayout());
-
-        this.add(panel1, BorderLayout.CENTER);
-        this.add(panel2, BorderLayout.SOUTH);
+        JPanel panel = new JPanel(new BorderLayout());
 
         JTextField nameField = new JTextField(1);
-        panel1.add(new JLabel("Name", SwingConstants.CENTER));
-        panel1.add(nameField);
-
         JTextField emailField = new JTextField(1);
-        panel1.add(new JLabel("Email", SwingConstants.CENTER));
-        panel1.add(emailField);
-
         JTextField passwordField = new JTextField(1);
-        panel1.add(new JLabel("Password", SwingConstants.CENTER));
-        panel1.add(passwordField);
+        JTextArea bioField = new JTextArea(3,1);
 
-        JTextArea bioField = new JTextArea();
-        panel1.add(new JLabel("Bio", SwingConstants.CENTER));
-        panel1.add(bioField);
+        JPanel top = new JPanel(new GridLayout(4,2,5,5));
 
-        panel1.add(new JLabel("", SwingConstants.CENTER));
-        panel1.add(new JCheckBox("Subscribe to Newsletters", false));
+        top.add(new JLabel("Name", SwingConstants.CENTER));
+        top.add(nameField);
+        top.add(new JLabel("Email", SwingConstants.CENTER));
+        top.add(emailField);
+        top.add(new JLabel("Password", SwingConstants.CENTER));
+        top.add(passwordField);
+        top.add(new JLabel("Bio", SwingConstants.CENTER));
+        top.add(bioField);
 
+        JPanel middle = new JPanel(new FlowLayout());
+        middle.add(new JLabel("", SwingConstants.CENTER));
+        middle.add(new JCheckBox("Subscribe to Newsletters", false));
+
+        JPanel bottom = new JPanel(new FlowLayout());
         JButton submit = new JButton("Submit");
         submit.addActionListener(new ActionListener() {
             @Override
@@ -59,8 +58,6 @@ public class XYZ_GUI extends JFrame {
                 System.out.println("Bio: " + bioField.getText());
             }
         });
-        panel2.add(submit);
-
         JButton reset = new JButton("Reset");
         reset.addActionListener(new ActionListener() {
             @Override
@@ -71,11 +68,25 @@ public class XYZ_GUI extends JFrame {
                 bioField.setText("");
             }
         });
-        panel2.add(reset);
+        bottom.add(submit);
+        bottom.add(reset);
+
+        JPanel content = new JPanel(new GridBagLayout());
+        content.setOpaque(false);
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridwidth = GridBagConstraints.REMAINDER;
+        c.fill = GridBagConstraints.BOTH;
+        c.weightx = 1.0;
+        c.weighty = 1.0;
+
+        content.add(top, c);
+        content.add(middle, c);
+        content.add(bottom, c);
+
+        panel.add(content);
+
+        return panel;
     }
 
-    public static void main(String[] args) {
-        XYZ_GUI sample = new XYZ_GUI();
-        sample.setVisible(true);
-    }
 }
