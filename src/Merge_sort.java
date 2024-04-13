@@ -8,7 +8,7 @@ public class Merge_sort {
         int n1 = m - l + 1;
         int n2 = r - m;
         int[] L = new int[n1];
-        int R[] = new int[n2];
+        int[] R = new int[n2];
         for (int i = 0; i < n1; ++i)
             L[i] = arr[l + i];
         for (int j = 0; j < n2; ++j)
@@ -59,13 +59,13 @@ public class Merge_sort {
     }
 
     public static void main(String[] args) {
-        long startTime = System.nanoTime();
         Random rand = new Random();
         int[] arr = new int[100000];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextInt(100000);
         }
         Merge_sort ms = new Merge_sort();
+        long startTime = System.nanoTime();
         ms.sort(arr, 0, arr.length - 1);
         display(arr);
         long endTime   = System.nanoTime();

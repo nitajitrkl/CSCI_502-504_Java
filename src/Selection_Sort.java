@@ -26,13 +26,13 @@ public class Selection_Sort {
     }
 
     public static void main(String[] args) {
-        long startTime = System.nanoTime();
         Random rand = new Random();
         int[] a = new int[100000];
         for(int i=0; i<a.length; i++) {
-            a[i] = rand.nextInt(100000);
+            a[i] = rand.nextInt(100);
         }
         Selection_Sort sort = new Selection_Sort();
+        long startTime = System.nanoTime();
         sort.selectionSort(a);
         sort.display(a);
         long endTime   = System.nanoTime();
