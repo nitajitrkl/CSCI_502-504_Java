@@ -60,16 +60,17 @@ public class Merge_sort {
 
     public static void main(String[] args) {
         Random rand = new Random();
-        int[] arr = new int[100000];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(100000);
+        for (int j = 1; j < 6; j++) {
+            int[] a = new int[(int) Math.pow(10,j)];
+            for(int i=0; i<a.length; i++) {
+                a[i] = rand.nextInt(100);
+            }
+            Merge_sort ms = new Merge_sort();
+            long startTime = System.nanoTime();
+            ms.sort(a, 0, a.length - 1);
+            long endTime = System.nanoTime();
+            long totalTime = endTime - startTime;
+            System.out.println("Merge Sort took for input Size: " + (int) Math.pow(10,j) +  "--> " + totalTime + " ns");
         }
-        Merge_sort ms = new Merge_sort();
-        long startTime = System.nanoTime();
-        ms.sort(arr, 0, arr.length - 1);
-        display(arr);
-        long endTime   = System.nanoTime();
-        long totalTime = endTime - startTime;
-        System.out.println("Total time: " + totalTime);
     }
 }

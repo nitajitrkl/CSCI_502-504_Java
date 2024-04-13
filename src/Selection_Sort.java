@@ -27,17 +27,18 @@ public class Selection_Sort {
 
     public static void main(String[] args) {
         Random rand = new Random();
-        int[] a = new int[100000];
-        for(int i=0; i<a.length; i++) {
-            a[i] = rand.nextInt(100);
+        for (int j = 1; j < 6; j++) {
+            int[] a = new int[(int) Math.pow(10,j)];
+            for(int i=0; i<a.length; i++) {
+                a[i] = rand.nextInt(100);
+            }
+            Selection_Sort sort = new Selection_Sort();
+            long startTime = System.nanoTime();
+            sort.selectionSort(a);
+            long endTime = System.nanoTime();
+            long totalTime = endTime - startTime;
+            System.out.println("Selection Sort took for input Size: " + (int) Math.pow(10,j) +  "--> " + totalTime + " ns");
         }
-        Selection_Sort sort = new Selection_Sort();
-        long startTime = System.nanoTime();
-        sort.selectionSort(a);
-        sort.display(a);
-        long endTime   = System.nanoTime();
-        long totalTime = endTime - startTime;
-        System.out.println("Total time: " + totalTime);
     }
 }
 
