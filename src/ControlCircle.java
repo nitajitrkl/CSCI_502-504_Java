@@ -4,9 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControlCircle extends JFrame {
+
     private JButton jbtEnlarge = new JButton("Enlarge");
     private JButton jbtShrink = new JButton("Shrink");
     private CirclePanel canvas = new CirclePanel();
+
     public ControlCircle(){
         JPanel panel = new JPanel();
         panel.add(jbtEnlarge);
@@ -31,7 +33,7 @@ public class ControlCircle extends JFrame {
 
     public static void main(String[] args) {
         JFrame frame = new ControlCircle();
-        frame.setTitle("ControlCircle1");
+        frame.setTitle("ControlCircle");
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(200,200);
