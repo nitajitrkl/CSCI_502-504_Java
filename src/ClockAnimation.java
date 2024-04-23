@@ -9,7 +9,7 @@ public class ClockAnimation extends JFrame {
 
     public ClockAnimation() {
         add(clock);
-        Timer timer = new Timer(100, new TimerListener());
+        Timer timer = new Timer(1000, new TimerListener());
         timer.start();
     }
 
@@ -33,37 +33,6 @@ public class ClockAnimation extends JFrame {
 class ClockPanel extends JPanel {
     public ClockPanel() {
         setCurrentTime();
-    }
-
-//    public Clock(int hour, int minute, int second) {
-//        this.hour = hour;
-//        this.minute = minute;
-//        this.second = second;
-//    }
-
-//    public void setHour(int hour) {
-//        this.hour = hour;
-//        repaint();
-//    }
-//    public void setMinute(int minute) {
-//        this.minute = minute;
-//        repaint();
-//    }
-//    public void setSecond(int second) {
-//        this.second = second;
-//        repaint();
-//    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public int getMinute() {
-        return minute;
-    }
-
-    public int getSecond() {
-        return second;
     }
 
     public void setCurrentTime() {
