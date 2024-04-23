@@ -1,15 +1,15 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.*;
 
 public class ClockAnimation extends JFrame {
-    Clock clock = new Clock();
+    ClockPanel clock = new ClockPanel();
 
     public ClockAnimation() {
         add(clock);
-        Timer timer = new Timer(1000, new TimerListener());
+        Timer timer = new Timer(100, new TimerListener());
         timer.start();
     }
 
@@ -30,8 +30,8 @@ public class ClockAnimation extends JFrame {
     }
 }
 
-class Clock extends JPanel {
-    public Clock() {
+class ClockPanel extends JPanel {
+    public ClockPanel() {
         setCurrentTime();
     }
 
@@ -67,10 +67,10 @@ class Clock extends JPanel {
     }
 
     public void setCurrentTime() {
-        Calendar calendar = new GregorianCalendar();
-        this.hour = calendar.get(Calendar.HOUR_OF_DAY);
-        this.minute = calendar.get(Calendar.MINUTE);
-        this.second = calendar.get(Calendar.SECOND);
+        LocalTime time = LocalTime.now();
+        this.hour = time.getHour();
+        this.minute = time.getMinute();
+        this.second = time.getSecond();
     }
 
     protected void paintComponent(Graphics g) {
@@ -79,8 +79,6 @@ class Clock extends JPanel {
         int clockRadius = (int) (Math.min(getWidth(), getHeight()) * 0.8 * 0.5);
         int xCenter = getWidth() / 2;
         int yCenter = getHeight() / 2;
-        System.out.println(xCenter);
-        System.out.println(yCenter);
 
         g.setColor(Color.black);
         g.drawOval(xCenter - clockRadius, yCenter - clockRadius, 2 * clockRadius, 2 * clockRadius);
@@ -110,9 +108,11 @@ class Clock extends JPanel {
         g.setColor(Color.black);
         g.drawLine(xCenter, yCenter, xHour, yHour);
 
-        String str = getHour() + ":" + getMinute() + ":" + getSecond();
+        DateTimeFormatter FOMATTER = DateTimeFormatter.ofPattern("hh:mm a");
+        String localTimeString = FOMATTER.format( LocalTime.now() ); 
+
         g.setColor(Color.black);
-        g.drawString(str, xCenter - (int) (clockRadius / 2.5), yCenter + (int) (clockRadius * 1.2));
+        g.drawString(localTimeString, xCenter - (int) (clockRadius / 2.5), yCenter + (int) (clockRadius * 1.2));
     }
 
     public Dimension getPreferredSize() {
