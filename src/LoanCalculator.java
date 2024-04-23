@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.Math.round;
 
 public class LoanCalculator {
     public LoanCalculator() {
@@ -11,11 +10,9 @@ public class LoanCalculator {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        // In main frame, whole pane is being added and size set to accommodate all components.
         frame.add(new TestPane1());
         frame.pack();
 
-        // frame set to be in the center of the screen.
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
@@ -28,17 +25,15 @@ class TestPane1 extends JPanel {
     public TestPane1() {
         JPanel panel = new JPanel(new BorderLayout());
 
-        // All Form Fields are set.
         JTextField interestRate = new JTextField(1);
         JTextField years = new JTextField(1);
         JTextField loanAmount = new JTextField(1);
         JTextField monthlyPayment = new JTextField(1);
         JTextField totalPayment = new JTextField(1);
 
-        // Form section layout --> Grid Layout
+
         JPanel top = new JPanel(new GridLayout(5,2,5,5));
 
-        // Form Section --> All Labels and input field added.
         top.add(new JLabel("Annual Interest Rate", SwingConstants.CENTER));
         top.add(interestRate);
         top.add(new JLabel("Number of Years", SwingConstants.CENTER));
@@ -50,10 +45,9 @@ class TestPane1 extends JPanel {
         top.add(new JLabel("Total Payment", SwingConstants.CENTER));
         top.add(totalPayment);
 
-        // Submit Button with ActionListener
         JPanel bottom = new JPanel(new FlowLayout());
-        JButton submit = new JButton("Submit");
-        submit.addActionListener(new ActionListener() {
+        JButton calculate = new JButton("Calculate");
+        calculate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 double interest = Double.parseDouble(interestRate.getText())/12/100;
@@ -68,7 +62,7 @@ class TestPane1 extends JPanel {
             }
         });
 
-        bottom.add(submit);
+        bottom.add(calculate);
 
         JPanel content = new JPanel(new GridBagLayout());
         content.setOpaque(false);
@@ -79,7 +73,6 @@ class TestPane1 extends JPanel {
         c.weightx = 1.0;
         c.weighty = 1.0;
 
-        // All 3 Panels are added to content grid bag object
         content.add(top, c);
         content.add(bottom, c);
         panel.add(content);
